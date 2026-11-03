@@ -1,3 +1,8 @@
+[![WordPress](https://img.shields.io/badge/WordPress-7.2%2B-blue.svg)](https://wordpress.org/)
+[![PHP](https://img.shields.io/badge/PHP-8.5%2B-blue.svg)](https://php.net/)
+[![Version](https://img.shields.io/badge/Version-1.0.1-orange.svg)](https://www.mrkwp.com/)
+[![License: GPL v2](https://img.shields.io/badge/License-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+
 # MRKWP Headless
 Locks the WordPress front end behind the login screen for a headless setup, while keeping the REST API and FluentCRM's public endpoints working.
 
