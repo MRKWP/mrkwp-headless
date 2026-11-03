@@ -2,11 +2,11 @@
 /**
  * Plugin Name:     MRK WP Headless
  * Plugin URI:      https://mrkwp.com
- * Description:     Sends all front-end traffic to the login screen, except REST API calls and FluentCRM webhooks, tracking links and email signup confirmations.
+ * Description:     Sends all front-end traffic to the login screen, except REST API calls and FluentCRM webhooks, tracking links and email signup confirmations. Triggers Cloudflare Pages rebuilds when content changes or on a schedule.
  * Author:          MRK WP
  * Author URI:      https://mrkwp.com
  * Text Domain:     mrkwp-headless
- * Version:         1.0.0
+ * Version:         1.0.1
  * Requires at least: 6.2
  * Requires PHP:      8.2
  *
@@ -14,6 +14,16 @@
  */
 
 defined( 'ABSPATH' ) || die( 'No Access!' );
+
+if ( ! defined( 'MRKWP_HEADLESS_VERSION' ) ) {
+	define( 'MRKWP_HEADLESS_VERSION', '1.0.1' );
+}
+
+require_once __DIR__ . '/includes/deploy-hook.php';
+require_once __DIR__ . '/includes/settings.php';
+
+register_activation_hook( __FILE__, 'mrkwp_headless_sync_schedule' );
+register_deactivation_hook( __FILE__, 'mrkwp_headless_unschedule_all' );
 
 /*
  * template_redirect only fires for front-end template loads, so wp-admin,

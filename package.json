@@ -1,7 +1,7 @@
 {
 	"name": "mrkwp-headless",
-	"version": "1.0.0",
-	"description": "Redirects front-end traffic to the login screen except REST API and FluentCRM endpoints",
+	"version": "1.0.1",
+	"description": "Redirects front-end traffic to the login screen except REST API and FluentCRM endpoints, and triggers Cloudflare Pages rebuilds",
 	"author": "MRKWP - Matt Knighton",
 	"license": "GPL-2.0-or-later",
 	"scripts": {
@@ -13,6 +13,7 @@
 	"files": [
 		"mrkwp-headless.php",
 		"index.php",
+		"includes",
 		"README.md"
 	]
 }
